@@ -9,7 +9,7 @@ const Login=()=>{
     const navigate=useNavigate();
     const [appError,setError]=useState('');
      async function formSubmit(value){
-        await fetch("http://localhost:3010/login", {
+        await fetch("https://cbtserver-7gfq.onrender.com/login", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
