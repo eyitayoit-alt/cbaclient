@@ -15,7 +15,7 @@ useEffect(()=>{
     scores:scoresCount
  }
  //fetch call to backend
-  fetch("http://localhost:3010/scores",{
+  fetch("https://cbtserver-7gfq.onrender.com/scores",{
  method:"POST",
  headers: {
     "Content-Type": "application/json",
@@ -50,7 +50,7 @@ useEffect(()=>{
 //handle Logout
 
  function handleLogout(){
-  fetch('http://localhost:3010/logout')
+  fetch('https://cbtserver-7gfq.onrender.com/logout')
   .then((response)=>{
     if(response.statusText==="OK"){
       navigate("/")
