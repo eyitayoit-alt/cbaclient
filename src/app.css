@@ -1,0 +1,396 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+:root {
+  --text-color: #0d0d0c;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+html {
+  font-size: 16px;
+  font-family: Verdana, Tahoma;
+}
+
+body {
+  font-family: "Righteous" Arial, Helvetica;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.scale-up-center {
+  -webkit-animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+@-webkit-keyframes scale-up-center {
+  0% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes scale-up-center {
+  0% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+div.error p {
+  font-size: 24px;
+  text-align: center;
+  color: red;
+}
+
+.cba-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  width: 100%;
+  background: linear-gradient(101.67deg, #FF6939 0%, #FF3D00 0.01%, #F3AB3F 99.15%);
+}
+.cba-container .about-cba {
+  color: #fff;
+  text-align: center;
+  padding: 2rem 2rem;
+}
+.cba-container .about-cba h1 {
+  font-size: 3rem;
+}
+.cba-container .about-cba p {
+  font-size: 2rem;
+}
+.cba-container button {
+  width: 100%;
+  height: 3rem;
+  border-radius: 10px;
+  margin-top: 10px;
+  color: #fff;
+  font-size: 1.5rem;
+  background-color: rgb(50, 50, 54);
+}
+
+h2.login {
+  color: var(--text-color);
+  width: 80%;
+  margin: 1rem auto;
+}
+
+.login-container {
+  width: 80%;
+  margin: 3rem auto;
+  background-color: #fff;
+  box-shadow: 2px 2px 2px 2px #a9a8a7;
+  padding: 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  font-size: 1.5rem;
+}
+.login-container .fa-user {
+  width: 20%;
+  margin: 10px auto;
+}
+.login-container .display-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+.login-container form {
+  width: 100%;
+  margin: 2px auto;
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+  font-size: 18px;
+}
+.login-container form .textinput {
+  height: 34px;
+  width: 100%;
+  border-radius: 10px;
+}
+.login-container form button {
+  height: 34px;
+  width: 100%;
+  color: #fff;
+  font-size: 18px;
+  background-color: #0d0d0c;
+}
+
+.display-container > p {
+  color: #0d0d0c;
+  font-size: 18px;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: #fff;
+  background: linear-gradient(101.67deg, #FF6939 0%, #FF3D00 0.01%, #F3AB3F 99.15%);
+  row-gap: 5px;
+  height: 100px;
+  padding: 1rem 1rem;
+}
+.details span {
+  font-size: 18px;
+  margin-left: 4%;
+}
+
+.questions-container {
+  width: 90%;
+  margin: 2rem auto;
+  background-color: #fff;
+}
+.questions-container .question-form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+.questions-container .question-form .exam-instructions {
+  font-weight: 800;
+  font-size: 16px;
+}
+.questions-container .question-form .question {
+  display: flex;
+  flex-direction: row;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+.questions-container .question-form .question span {
+  font-size: 18px;
+}
+.questions-container .question-form button {
+  width: 40%;
+  margin: 2rem auto;
+  height: 40px;
+  color: #fff;
+  border-radius: 10px;
+  background-color: #0d0d0c;
+}
+
+.question-option {
+  display: flex;
+  flex-direction: row;
+  margin-left: 20px;
+  -moz-column-gap: 5px;
+       column-gap: 5px;
+}
+.question-option span {
+  font-size: 16px;
+}
+
+.score-container {
+  width: 80%;
+  margin: 1rem auto;
+}
+
+.score-display {
+  width: 80%;
+  height: 30px;
+  margin: 2rem auto;
+  color: rgb(247, 117, 2);
+}
+
+table {
+  table-layout: auto;
+  width: 80%;
+  margin: 2rem auto;
+  border-collapse: collapse;
+  vertical-align: middle;
+}
+table caption {
+  font-weight: 700;
+  font-size: 18px;
+}
+table thead {
+  background-color: rgb(14, 13, 13);
+  color: #fff;
+}
+table th, table td {
+  padding: 8px;
+}
+
+.decision {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.decision button {
+  width: 40%;
+  margin: 2rem auto;
+  height: 40px;
+  color: #fff;
+  border-radius: 10px;
+  background-color: #0d0d0c;
+}
+
+button.retake {
+  background-color: #fff;
+  border-style: 2px solid;
+  color: #0d0d0c;
+}
+
+.alert .alert-inner span {
+  margin-left: 10px;
+  font-size: 18px;
+}
+
+.timer {
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+  height: 70px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px 2px rgb(112, 111, 111);
+  -moz-column-gap: 5%;
+       column-gap: 5%;
+  position: fixed;
+  z-index: 5000;
+  top: 0px;
+  left: 35%;
+  background-color: #fff;
+}
+.timer div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 1rem;
+  border-top-right-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.timer div p {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+}
+.timer div p span {
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+}
+.timer .timer-left {
+  width: 40%;
+}
+.timer .timer-right {
+  width: 55%;
+}
+
+@media screen and (min-width: 500px) {
+  h2.login {
+    width: 70%;
+  }
+  .login-container {
+    width: 70%;
+    font-size: 16px;
+  }
+  .login-container form {
+    width: 100%;
+  }
+  .login-container form .textinput {
+    height: 38px;
+  }
+  .login-container form button {
+    height: 40px;
+  }
+  .timer {
+    width: 50%;
+    left: 40%;
+  }
+  .timer div p {
+    font-size: 18px;
+  }
+  .timer div p span {
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 800px) {
+  h2.login {
+    width: 60%;
+    font-size: 3rem;
+    margin: 1rem auto;
+  }
+  .login-container {
+    width: 50%;
+    margin-top: 50px;
+    height: 550px;
+    font-size: 2.5rem;
+    row-gap: 20px;
+  }
+  .login-container form {
+    font-size: 24px;
+    row-gap: 50px;
+    width: 100%;
+  }
+  .login-container form .textinput {
+    margin: 5px auto;
+    height: 54px;
+    width: 100%;
+    margin: 5px auto;
+  }
+  .login-container form button {
+    height: 54px;
+    font-size: 24px;
+    width: 100%;
+  }
+  .questions-container .question-form button {
+    width: 20%;
+    margin: 10px auto;
+  }
+  table {
+    font-size: 18px;
+  }
+  .decision button {
+    width: 20%;
+  }
+  .decision .decision-button {
+    width: 20%;
+  }
+  .timer {
+    width: 30%;
+    left: 60%;
+  }
+}
+@media screen and (min-width: 1000px) {
+  h2.login {
+    width: 30%;
+    font-size: 24px;
+  }
+  .cba-container {
+    font-size: 4rem;
+    justify-content: center;
+    align-items: center;
+  }
+  .login-container {
+    width: 30%;
+    row-gap: 35px;
+  }
+  .login-container form {
+    row-gap: 20px;
+    margin: 10px auto;
+  }
+  .login-container form button {
+    margin-top: 10px;
+  }
+  .questions-container {
+    width: 60%;
+    margin: 2rem auto;
+  }
+}/*# sourceMappingURL=app.css.map */
