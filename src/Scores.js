@@ -1,7 +1,8 @@
 
-import React, { useEffect } from "react";
-import { useLocation,useNavigate } from "react-router-dom";
+import React, { useCallback, useState } from "react";
+import { useLocation,useNavigate  } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
+
 //Score component render and record scorec
 const Scores=(props)=>{
   let scoresCount=0
@@ -9,7 +10,8 @@ const Scores=(props)=>{
    let navigate=useNavigate();
    //deconstruct  state
  const {studentAns,questionArr,reg_id,display_name} =location.state;
-useEffect(()=>{
+  const {msg,setMessage}=useState()
+ const scoreLog=useCallback(()=>{
   const value={
     reg_id:reg_id,
     scores:scoresCount
@@ -24,10 +26,26 @@ useEffect(()=>{
 })
 .then((response) => response.json())
   .catch((error)=>{
-    console.log("Unable to save scores at the Moment")
+    setMessage("Unable to save scores at the Moment")
   })
 },[scoresCount,reg_id])
 
+const logout=useCallback(()=>{
+  fetch("https://cbtserver-7gfq.onrender.com/logout",{
+    method:"GET"
+  })
+  .then((response)=>{
+    if(response.status===200){
+      
+     setMessage("Succesful Logout")
+     location.state={ }
+    }
+  }).catch((error)=>{
+   
+
+  })
+
+},[])
 
  // Extract student answer using reges and create a map keys
  
@@ -50,15 +68,9 @@ useEffect(()=>{
 //handle Logout
 
  function handleLogout(){
-  fetch('https://cbtserver-7gfq.onrender.com/logout')
-  .then((response)=>{
-    if(response.statusText==="OK"){
-      navigate("/")
-    }
-  }).catch((error)=>{
-   console.log("Unable to Logout")
-  })
-  
+  scoreLog();
+  logout();
+  navigate("/",{state:msg});
  }
 
 
@@ -80,7 +92,7 @@ return(
     <>
      <div className="details"><span><FaUserCircle />{display_name}</span> <span>{reg_id}</span></div>
                
-              
+            {msg && <div>{msg}</div>}
     <div  className="score-container scale-up-center" >
    
     
@@ -107,6 +119,7 @@ return(
    </tfoot>
 </table>
 <div className="score-display"><h2 className="resultCaption">Your Test Scores is {scoresCount * 10} out of {questionArr.length * 10}</h2></div>
+
 <div className="decision"> <button className="logout" onClick={handleLogout}>Logout</button></div>
 </div>
 </>
