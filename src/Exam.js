@@ -4,7 +4,8 @@ import { useLocation,useNavigate } from "react-router-dom";
 import AlertDialog from "./Dialog";
 import Timer from './Timer'
 
-// generate time
+
+
 
 
  //function to generate random number
@@ -40,7 +41,7 @@ const Exam=()=>{
   //fetch exam question from backend
 
 useEffect(()=>{   
-  fetch("https://cbtserver-7gfq.onrender.com/exam")
+  fetch("http://localhost:3080/exam")
   .then((response) => response.json())
   .then((data) =>{
     if(data==="Unauthorised Access"){
@@ -64,7 +65,7 @@ useEffect(()=>{
   }
   // handle submittion redirect to score
   
-
+  let questionArr=[];
   const handleSubmit=(event)=>{
     event.preventDefault();
     
@@ -97,7 +98,9 @@ useEffect(()=>{
       
                 return(
                   <>
+                
                   <div className="details"><span><FaUserCircle />{display_name}</span> <span>{reg_id}</span></div>
+                  
                   <div className="alert"> <Timer duration={20} /></div>
                   <div className="questions-container scale-up-center">
                     <form id="questions" onSubmit={handleSubmit}  className="question-form" >
@@ -115,7 +118,9 @@ useEffect(()=>{
 </div>      
                     </div>)
                    })}
+                  
                    <AlertDialog  handleSubmit={handleSubmit}/>
+                  
                    </form>
                    </div>
      </> 
@@ -123,6 +128,11 @@ useEffect(()=>{
     
     
     }
+    else{
+     return (
+      <div>{appError}</div>)
+    }
+   
   }
 
 
