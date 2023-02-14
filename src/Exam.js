@@ -41,7 +41,7 @@ const Exam=()=>{
   //fetch exam question from backend
 
 useEffect(()=>{   
-  fetch("http://localhost:3080/exam")
+  fetch("https://cbtserver-7gfq.onrender.com/exam")
   .then((response) => response.json())
   .then((data) =>{
     if(data==="Unauthorised Access"){
